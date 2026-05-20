@@ -1,0 +1,11 @@
+{
+  "navbar": {
+    "home": "Anasayfa",
+    "leistungen": "Hizmetler",
+    "kontakt": "İletişim"
+  },
+  "home": {
+    "baslik": "Fahrschule Lahr",
+    "altbaslik": "Ehliyetine giden yol — hızlı, güvenli ve modern."
+  }
+}

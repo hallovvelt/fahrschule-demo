@@ -1,0 +1,11 @@
+{
+  "navbar": {
+    "home": "Home",
+    "leistungen": "Leistungen",
+    "kontakt": "Kontakt"
+  },
+  "home": {
+    "baslik": "Fahrschule Lahr",
+    "altbaslik": "Dein Weg zum Führerschein — schnell, sicher und modern."
+  }
+}
