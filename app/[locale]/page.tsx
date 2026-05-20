@@ -22,7 +22,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
 
   return (
     <>
-      <Navbar />
+      <Navbar locale={locale} />
       <main className="min-h-screen bg-black text-white flex flex-col items-center justify-center text-center px-8">
         <h1 className="text-6xl font-black text-white mb-4">
           {dil.baslik} <span className="text-blue-500">Lahr</span>
