@@ -1,5 +1,7 @@
+"use client"
 import Navbar from "./components/Navbar"
 import Link from "next/link"
+import { useEffect, useState, use } from "react"
 
 const icerik = {
   de: {
@@ -7,18 +9,30 @@ const icerik = {
     altbaslik: "Dein Weg zum Führerschein — schnell, sicher und modern.",
     btn1: "Leistungen ansehen",
     btn2: "Kontakt aufnehmen",
+    cerez: "Wir verwenden Cookies für eine bessere Erfahrung.",
+    kabul: "Akzeptieren",
   },
   tr: {
     baslik: "Fahrschule",
     altbaslik: "Ehliyetine giden yol — hızlı, güvenli ve modern.",
     btn1: "Hizmetleri gör",
     btn2: "İletişime geç",
+    cerez: "Daha iyi deneyim için çerez kullanıyoruz.",
+    kabul: "Kabul Et",
   }
 }
 
-export default async function Home({ params }: { params: Promise<{ locale: string }> }) {
-  const { locale } = await params
+export default function Home({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = use(params)
   const dil = locale === "tr" ? icerik.tr : icerik.de
+  const [cerezGoster, setCerezGoster] = useState(false)
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setCerezGoster(true)
+    }, 1000)
+    return () => clearTimeout(timer)
+  }, [])
 
   return (
     <>
@@ -37,6 +51,18 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
           </Link>
         </div>
       </main>
+
+      {cerezGoster && (
+        <div className="fixed bottom-6 left-6 right-6 md:left-auto md:right-6 md:w-96 bg-zinc-800 border border-zinc-600 rounded-2xl p-6 shadow-2xl">
+          <p className="text-white text-sm mb-4">🍪 {dil.cerez}</p>
+          <button
+            onClick={() => setCerezGoster(false)}
+            className="bg-blue-600 hover:bg-blue-500 text-white font-bold px-6 py-2 rounded-full transition-colors"
+          >
+            {dil.kabul}
+          </button>
+        </div>
+      )}
     </>
   )
 }
