@@ -9,6 +9,7 @@ const icerik = {
     altbaslik: "Dein Weg zum Führerschein — schnell, sicher und modern.",
     btn1: "Leistungen ansehen",
     btn2: "Kontakt aufnehmen",
+    btn3: "Termine buchen",
     cerez: "Wir verwenden Cookies für eine bessere Erfahrung.",
     kabul: "Akzeptieren",
   },
@@ -17,6 +18,7 @@ const icerik = {
     altbaslik: "Ehliyetine giden yol — hızlı, güvenli ve modern.",
     btn1: "Hizmetleri gör",
     btn2: "İletişime geç",
+    btn3: "Randevu Al",
     cerez: "Daha iyi deneyim için çerez kullanıyoruz.",
     kabul: "Kabul Et",
   }
@@ -49,6 +51,9 @@ export default function Home({ params }: { params: Promise<{ locale: string }> }
           <Link href={`/${locale}/iletisim`} className="border border-white hover:border-blue-500 hover:text-blue-500 text-white font-bold px-8 py-4 rounded-full transition-colors">
             {dil.btn2}
           </Link>
+          <Link href={`/${locale}/terminler`} className="border border-white hover:border-blue-500 hover:text-blue-500 text-white font-bold px-8 py-4 rounded-full transition-colors">
+            {dil.btn3}
+</Link>
         </div>
       </main>
 

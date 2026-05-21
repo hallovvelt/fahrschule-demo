@@ -18,6 +18,9 @@ export default function Navbar({ locale }: { locale: string }) {
             <Link href={`/${locale}/iletisim`} className="hover:text-blue-400 transition-colors">
               {dilerDe ? "Kontakt" : "İletişim"}
             </Link>
+            <Link href={`/${locale}/terminler`} className="hover:text-blue-500 transition">
+              {locale === "tr" ? "Randevu" : "Termine"}
+            </Link>
           </div>
           <div className="flex gap-2">
             <Link href={`/de`} className={`px-3 py-1 rounded-full text-sm font-bold transition-colors ${locale === "de" ? "bg-blue-600 text-white" : "text-gray-400 hover:text-white"}`}>
